@@ -1,0 +1,19 @@
+name: Trigger Events Workflows
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  workflow_dispatch:
+
+jobs:
+  trigger-event:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello There"
