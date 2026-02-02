@@ -11,4 +11,4 @@ jobs:
         run: echo "VERSION=1.0.0" >> $GITHUB_ENV
 
       - name: read variable
-        run: echo "Version is $"
+        run: echo "Version is $VERSION"
