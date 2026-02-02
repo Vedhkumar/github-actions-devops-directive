@@ -9,3 +9,9 @@ jobs:
     steps:
       - name: first step
         run: echo "Hello There"
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: second step
+        run: print("Hello there")
+        shell: python
