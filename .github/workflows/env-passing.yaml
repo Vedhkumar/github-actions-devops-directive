@@ -12,3 +12,9 @@ jobs:
 
       - name: read variable
         run: echo "Version is $VERSION"
+
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get variable
+        run: echo "$VERSION"
