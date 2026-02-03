@@ -18,3 +18,13 @@ jobs:
         run: |
           echo "Hello from ${{runner.os}}-${{runner.arch}}"
           echo "Runner name (type): ${{runner.name}}"
+  job-3:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:3.20
+    steps:
+      - name: show contianer details
+        run: |
+          echo "Hello from ${{runner.os}}-${{runner.arch}}"
+          echo "Runner name (type): ${{runner.name}}"
+          echo "Container image: $(cat /etc/os-release | grep PRETTY_NAME)"
