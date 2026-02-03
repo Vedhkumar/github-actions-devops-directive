@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: job-1
     steps:
-      - run: |
+      - name: Something
+        run: |
           echo $FOO
-          echo "sdf ${{ needs.job-1.ouputs.foo }}"
+          echo "sdf ${{ needs.job-1.outputs.foo }}"
