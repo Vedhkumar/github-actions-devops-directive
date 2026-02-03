@@ -1,0 +1,14 @@
+name: Artifacts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  producer:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Some text" >> artifact.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: artifact-file
+          path: artifact.txt
