@@ -1,0 +1,13 @@
+name: Runner Types
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show runner info
+        run: |
+          echo "Hello from ${{ runner.os }}-${{ runner.arch}}"
+          echo "Runner name (type): ${{runner.name}}"
