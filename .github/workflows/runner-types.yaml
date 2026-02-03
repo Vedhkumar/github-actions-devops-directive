@@ -7,7 +7,14 @@ jobs:
   job-1:
     runs-on: ubuntu-latest
     steps:
-      - name: show runner info
+      - name: show ubuntu info
         run: |
           echo "Hello from ${{ runner.os }}-${{ runner.arch}}"
+          echo "Runner name (type): ${{runner.name}}"
+  job-2:
+    runs-on: windows-latest
+    steps:
+      - name: show windows info
+        run: |
+          echo "Hello from ${{runner.os}}-${{runner.arch}}"
           echo "Runner name (type): ${{runner.name}}"
