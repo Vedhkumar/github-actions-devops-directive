@@ -1,0 +1,13 @@
+name: Passing Data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          foo=bar
+          echo "FOO=${foo}" >> "$GITHUB_ENV"
+      - run: echo $FOO
