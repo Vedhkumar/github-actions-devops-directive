@@ -7,6 +7,6 @@ jobs:
   job-1:
     runs-on: ubuntu-20.04
     container:
-      image: node:alpine
+      image: node:25-alpine3.22
     steps:
       - run: node --version
