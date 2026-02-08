@@ -1,0 +1,12 @@
+name: Runner types
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job-1:
+    runs-on: ubuntu-20.04
+    container:
+      image: node:alpine
+    steps:
+      - run: node --version
