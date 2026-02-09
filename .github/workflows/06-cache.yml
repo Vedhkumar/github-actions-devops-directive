@@ -28,4 +28,3 @@ jobs:
       - name: Check demo cache
         run: |
           echo "demo-cache? > ${{steps.demo-cache.outputs.cache-hit}}"
-          cat cache/timestamp.txt
