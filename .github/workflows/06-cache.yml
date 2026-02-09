@@ -1,0 +1,31 @@
+name: Caching
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore cache
+        id: demo-cache
+        uses: action/cache@v4
+        with:
+          path: cache
+          id: cache-id
+
+      - name: Populate cache directory
+        if: steps.demo-cache.outputs.cache-hit != true
+        run: echo "Cache file generation" > cache.txt
+
+      - name: Create cache file
+        if: steps.demo-cache.outputs.cache-hit != true
+        uses: action/cache@v4
+        with:
+          path: cache
+          id: cache-id
+
+      - name: Check demo cache
+        run: |
+          echo "demo-cache? > ${{steps.demo-cache.outputs.cache-hit}}"
+          cat cache/timestamp.txt
