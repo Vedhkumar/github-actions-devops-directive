@@ -11,24 +11,24 @@ jobs:
         id: demo-cache
         uses: actions/cache@v4
         with:
-          path: cache
+          path: cache-demo
           key: cache-id
 
       - name: Populate cache directory
         if: steps.demo-cache.outputs.cache-hit != true
         run: |
-          mkdir cache
-          echo "Cache file generation" > cache/cache.txt
-          date > cache/timestamp.txt
+          mkdir cache-demo
+          echo "Cache file generation" > cache-demo/cache.txt
+          date > cache-demo/timestamp.txt
 
       - name: Create cache file
         if: steps.demo-cache.outputs.cache-hit != true
         uses: actions/cache@v4
         with:
-          path: cache
+          path: cache-demo
           key: cache-id
 
       - name: Check demo cache
         run: |
           echo "demo-cache? > ${{steps.demo-cache.outputs.cache-hit}}"
-          cat cache/timestamp.txt
+          cat cache-demo/timestamp.txt
