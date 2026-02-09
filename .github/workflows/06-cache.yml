@@ -16,7 +16,10 @@ jobs:
 
       - name: Populate cache directory
         if: steps.demo-cache.outputs.cache-hit != true
-        run: echo "Cache file generation" > cache.txt
+        run: |
+          mkdir cache
+          echo "Cache file generation" > cache/cache.txt
+          date > cache/timestamp.txt
 
       - name: Create cache file
         if: steps.demo-cache.outputs.cache-hit != true
@@ -28,3 +31,4 @@ jobs:
       - name: Check demo cache
         run: |
           echo "demo-cache? > ${{steps.demo-cache.outputs.cache-hit}}"
+          cat cache/timestamp.txt
