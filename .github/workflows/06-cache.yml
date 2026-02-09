@@ -12,7 +12,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: cache
-          id: cache-id
+          key: cache-id
 
       - name: Populate cache directory
         if: steps.demo-cache.outputs.cache-hit != true
@@ -23,7 +23,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: cache
-          id: cache-id
+          key: cache-id
 
       - name: Check demo cache
         run: |
