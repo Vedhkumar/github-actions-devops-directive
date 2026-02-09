@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Restore cache
         id: demo-cache
-        uses: action/cache@v4
+        uses: actions/cache@v4
         with:
           path: cache
           id: cache-id
@@ -20,7 +20,7 @@ jobs:
 
       - name: Create cache file
         if: steps.demo-cache.outputs.cache-hit != true
-        uses: action/cache@v4
+        uses: actions/cache@v4
         with:
           path: cache
           id: cache-id
