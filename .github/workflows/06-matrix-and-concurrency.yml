@@ -1,0 +1,17 @@
+name: Concurrency and Matrix
+
+on:
+  workflow_dispatch:
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        number: [18, 19]
+        letters: [a, b, c]
+
+    steps:
+      - run: |
+          echo "Number: ${{ matrix.number }}"
+          echo "Letter: ${{ matrix.letters }}"
