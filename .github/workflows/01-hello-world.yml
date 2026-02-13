@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  job-1:
+  hello-world:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello There"
+      - uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: "World"
