@@ -1,0 +1,19 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types:
+      - reopened
+      - synchronize
+      - opened
+    branches:
+      - main
+    paths:
+      - "filters/included-file.md"
+      - "!filters/exclude-file.txt"
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Test ran!!!"
